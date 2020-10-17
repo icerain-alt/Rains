@@ -20,13 +20,26 @@
 
     body {
         background: url(images/pic4.jpg) no-repeat center top;
+        background-size: 1600px 1000px;
+    }
+
+    .Hi {
+        width: 410px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        margin: 0 auto;
+        margin-top: 80px;
+        font: 18px Simsun, arial, sans-serif;
+        font-size: 40px;
+        color: white;
     }
 
     .baidu {
         overflow: hidden;
         width: 410px;
         background-color: #fff;
-        margin: 100px auto;
+        margin: 0px auto;
         padding-left: 1px;
 
     }
@@ -40,9 +53,14 @@
         width: 100px;
         height: 62.5px;
     }
+
+    .baidu li img:hover {
+        cursor: pointer;
+    }
 </style>
 
 <body>
+    <p class="Hi">Good morning!</p>
     <ul class="baidu">
         <li><img src="images/pic1.jpg" alt=""></li>
         <li><img src="images/pic2.jpg" alt=""></li>
@@ -50,6 +68,15 @@
         <li><img src="images/pic4.jpg" alt=""></li>
     </ul>
     <script>
+        var Hi = document.querySelector('.Hi');
+        var date = new Date();
+        var h = date.getHours();
+        if (h > 12 && h < 18) {
+            Hi.innerText = 'Good afternoon!'
+        }
+        else if (h >= 18) {
+            Hi.innerText = 'Good evening!'
+        }
         var imgs = document.querySelectorAll('.baidu li img');
         var bd = document.body;
         console.log(imgs);
