@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain's Story</title>
+</head>
+<link rel="stylesheet" href="css/base.css">
+<link rel="shortcut icon" href="favicon.ico" />
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    body {
+        background: url(images/pic4.jpg) no-repeat center top;
+    }
+
+    .baidu {
+        overflow: hidden;
+        width: 410px;
+        background-color: #fff;
+        margin: 100px auto;
+        padding-left: 1px;
+
+    }
+
+    .baidu li {
+        float: left;
+        margin: 0px 1px;
+    }
+
+    .baidu li img {
+        width: 100px;
+        height: 62.5px;
+    }
+</style>
+
+<body>
+    <ul class="baidu">
+        <li><img src="images/pic1.jpg" alt=""></li>
+        <li><img src="images/pic2.jpg" alt=""></li>
+        <li><img src="images/pic3.jpg" alt=""></li>
+        <li><img src="images/pic4.jpg" alt=""></li>
+    </ul>
+    <script>
+        var imgs = document.querySelectorAll('.baidu li img');
+        var bd = document.body;
+        console.log(imgs);
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function () {
+                console.log(this.src);
+                // bd.style.backgroundImage = 'url(images/pic4.jpg)';
+                bd.style.backgroundImage = 'url( ' + this.src + ')';
+            }
+        }        
+    </script>
+</body>
+
+</html>
